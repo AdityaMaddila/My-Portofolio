@@ -320,16 +320,16 @@ const Skills = () => {
         {/* Bottom Stats */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           <div className="text-center bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
-            <div className="text-3xl font-bold text-white mb-1">7+</div>
+            <div className="text-3xl font-bold text-white mb-1">5+</div>
             <div className="text-gray-400 text-sm">Categories</div>
           </div>
           <div className="text-center bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
-            <div className="text-3xl font-bold text-white mb-1">25+</div>
+            <div className="text-3xl font-bold text-white mb-1">20+</div>
             <div className="text-gray-400 text-sm">Technologies</div>
           </div>
           <div className="text-center bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
             <div className="text-3xl font-bold text-white mb-1">3+</div>
-            <div className="text-gray-400 text-sm">Years Experience</div>
+            <div className="text-gray-400 text-sm">Years Hands-on Experience</div>
           </div>
           <div className="text-center bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
             <div className="text-3xl font-bold text-white mb-1">∞</div>

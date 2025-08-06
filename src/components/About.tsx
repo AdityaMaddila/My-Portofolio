@@ -1,8 +1,10 @@
 import { Download, MapPin, Calendar, GraduationCap } from 'lucide-react';
 import profilePic from '@/assets/profile-pic.jpg';
+const downloadResume = () => {window.open('https://drive.google.com/file/d/1OyeENarM-u5bZhpBFR9jjxgLW9deNBCj/view?usp=sharing', '_blank')};
 
 const About = () => {
   return (
+    
     <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-muted/30">
       <div className="section-container px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -82,7 +84,7 @@ const About = () => {
 
             {/* Download Resume */}
             <div className="flex justify-center sm:justify-start">
-              <button className="btn-hero w-full sm:w-auto min-w-[200px] flex items-center justify-center px-6 py-3 text-sm sm:text-base">
+              <button className="btn-hero w-full sm:w-auto min-w-[200px] flex items-center justify-center px-6 py-3 text-sm sm:text-base" onClick={downloadResume}>
                 <Download size={18} className="mr-2 flex-shrink-0" />
                 Download Resume
               </button>

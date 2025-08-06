@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { ExternalLink, Github, Eye } from 'lucide-react';
-
+const viewMoreProjects = () => {
+  window.open('https://github.com/AdityaMaddila?tab=repositories', '_blank'); 
+}
 const Projects = () => {
   const projects = [
     {
@@ -185,7 +187,7 @@ const Projects = () => {
 
         {/* View More Projects */}
         <div className="text-center mt-12">
-          <button className="btn-outline">
+          <button className="btn-outline" onClick={viewMoreProjects}>
             <Github size={20} className="mr-2" />
             View All Projects on GitHub
           </button>

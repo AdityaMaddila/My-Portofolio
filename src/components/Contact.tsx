@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,24 +10,70 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus({ type: '', message: '' });
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // EmailJS configuration
+      const emailjsConfig = {
+        serviceID: 'service_54sorhw', // Replace with your EmailJS service ID
+        templateID: 'template_022kvr9', // Replace with your EmailJS template ID
+        publicKey: 'QEich7vw3KCde0Avc' // Replace with your EmailJS public key
+      };
+
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject || 'New Contact Form Submission',
+        message: formData.message,
+        to_name: 'Aditya', // Your name
+        to_email: 'adityamvs202@gmail.com' // Your email
+      };
+
+      // Send email using EmailJS
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          service_id: emailjsConfig.serviceID,
+          template_id: emailjsConfig.templateID,
+          user_id: emailjsConfig.publicKey,
+          template_params: templateParams
+        })
+      });
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Message sent successfully! I\'ll get back to you soon.'
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error('Failed to send email');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again or contact me directly at adityamvs202@gmail.com'
+      });
+    } finally {
       setIsSubmitting(false);
-      alert('Message sent successfully!');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 2000);
+    }
   };
 
   return (
@@ -60,7 +106,9 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold">Email</p>
-                    <p className="text-muted-foreground">adityamvs202@gmail.com</p>
+                    <a href="mailto:adityamvs202@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                      adityamvs202@gmail.com
+                    </a>
                   </div>
                 </div>
 
@@ -70,7 +118,9 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold">Phone</p>
-                    <p className="text-muted-foreground">+91 7075802770</p>
+                    <a href="tel:+917075802770" className="text-muted-foreground hover:text-primary transition-colors">
+                      +91 7075802770
+                    </a>
                   </div>
                 </div>
 
@@ -91,17 +141,20 @@ const Contact = () => {
                 <div className="flex space-x-4">
                   <a 
                     href="https://github.com/AdityaMaddila"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-3 bg-card border border-card-border rounded-xl hover:bg-primary hover:border-primary hover:text-white transition-all duration-300"
                   >
                     <Github size={20} />
                   </a>
                   <a 
                     href="https://www.linkedin.com/in/aditya-maddila-full-stack-developer/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-3 bg-card border border-card-border rounded-xl hover:bg-primary hover:border-primary hover:text-white transition-all duration-300"
                   >
                     <Linkedin size={20} />
                   </a>
-
                 </div>
               </div>
             </div>
@@ -111,7 +164,18 @@ const Contact = () => {
           <div className="card-portfolio">
             <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Status Message */}
+            {submitStatus.message && (
+              <div className={`p-4 rounded-xl mb-6 ${
+                submitStatus.type === 'success' 
+                  ? 'bg-green-100 text-green-800 border border-green-200' 
+                  : 'bg-red-100 text-red-800 border border-red-200'
+              }`}>
+                {submitStatus.message}
+              </div>
+            )}
+            
+            <div className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -178,6 +242,7 @@ const Contact = () => {
 
               <button
                 type="submit"
+                onClick={handleSubmit}
                 disabled={isSubmitting}
                 className={`btn-hero w-full ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
               >
@@ -193,7 +258,7 @@ const Contact = () => {
                   </>
                 )}
               </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>

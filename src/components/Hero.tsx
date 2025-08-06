@@ -8,6 +8,18 @@ const Hero = () => {
     }
   };
 
+  const scrollToProjects = () => {
+    const projectsSection = document.querySelector('#projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const downloadResume = () => {
+    // Replace this URL with your actual Google Drive resume link
+    window.open('https://drive.google.com/file/d/1OyeENarM-u5bZhpBFR9jjxgLW9deNBCj/view?usp=sharing', '_blank');
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated Background */}
@@ -32,10 +44,10 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button className="btn-hero">
+            <button onClick={scrollToProjects} className="btn-hero">
               View My Work
             </button>
-            <button className="btn-outline">
+            <button onClick={downloadResume} className="btn-outline">
               Download Resume
             </button>
           </div>
