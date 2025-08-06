@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="text-center md:text-left mb-6 md:mb-0">
             <p className="text-muted-foreground">
-              © 2024 Alex Thompson. Made with{' '}
+              © 2025 Aditya Maddila. Made with{' '}
               <Heart size={16} className="inline text-red-500 animate-pulse" />{' '}
               using React & Tailwind CSS
             </p>
@@ -27,15 +27,6 @@ const Footer = () => {
           </button>
         </div>
 
-        {/* Additional Links */}
-        <div className="mt-8 pt-8 border-t border-card-border">
-          <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-primary transition-colors duration-300">Privacy Policy</a>
-            <a href="#" className="hover:text-primary transition-colors duration-300">Terms of Service</a>
-            <a href="#" className="hover:text-primary transition-colors duration-300">Sitemap</a>
-            <a href="#" className="hover:text-primary transition-colors duration-300">RSS Feed</a>
-          </div>
-        </div>
       </div>
     </footer>
   );

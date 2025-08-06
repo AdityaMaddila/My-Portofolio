@@ -60,7 +60,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold">Email</p>
-                    <p className="text-muted-foreground">alex.thompson@email.com</p>
+                    <p className="text-muted-foreground">adityamvs202@gmail.com</p>
                   </div>
                 </div>
 
@@ -70,7 +70,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold">Phone</p>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground">+91 7075802770</p>
                   </div>
                 </div>
 
@@ -80,7 +80,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold">Location</p>
-                    <p className="text-muted-foreground">San Francisco, CA</p>
+                    <p className="text-muted-foreground">Hyderabad, India</p>
                   </div>
                 </div>
               </div>
@@ -90,23 +90,18 @@ const Contact = () => {
                 <p className="font-semibold mb-4">Follow me on social media</p>
                 <div className="flex space-x-4">
                   <a 
-                    href="https://github.com"
+                    href="https://github.com/AdityaMaddila"
                     className="p-3 bg-card border border-card-border rounded-xl hover:bg-primary hover:border-primary hover:text-white transition-all duration-300"
                   >
                     <Github size={20} />
                   </a>
                   <a 
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/aditya-maddila-full-stack-developer/"
                     className="p-3 bg-card border border-card-border rounded-xl hover:bg-primary hover:border-primary hover:text-white transition-all duration-300"
                   >
                     <Linkedin size={20} />
                   </a>
-                  <a 
-                    href="https://twitter.com"
-                    className="p-3 bg-card border border-card-border rounded-xl hover:bg-primary hover:border-primary hover:text-white transition-all duration-300"
-                  >
-                    <Twitter size={20} />
-                  </a>
+
                 </div>
               </div>
             </div>

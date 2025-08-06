@@ -24,7 +24,7 @@ const Hero = () => {
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="block">Hello, I'm</span>
-            <span className="gradient-text">Alex Thompson</span>
+            <span className="gradient-text">Aditya Maddila</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
@@ -43,19 +43,19 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-6 mb-16">
             <a 
-              href="https://github.com" 
+              href="https://github.com/AdityaMaddila" 
               className="p-3 bg-card/50 border border-card-border rounded-full hover:bg-primary hover:border-primary transition-all duration-300 hover:scale-110 hover:shadow-glow"
             >
               <Github size={24} />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/aditya-maddila-full-stack-developer/" 
               className="p-3 bg-card/50 border border-card-border rounded-full hover:bg-primary hover:border-primary transition-all duration-300 hover:scale-110 hover:shadow-glow"
             >
               <Linkedin size={24} />
             </a>
             <a 
-              href="mailto:alex@example.com" 
+              href="mailto:adityamvs202@gmail.com" 
               className="p-3 bg-card/50 border border-card-border rounded-full hover:bg-primary hover:border-primary transition-all duration-300 hover:scale-110 hover:shadow-glow"
             >
               <Mail size={24} />
