@@ -1,6 +1,6 @@
 import { Download, MapPin, Calendar, GraduationCap } from 'lucide-react';
 import profilePic from '@/assets/profile-pic.jpg';
-const downloadResume = () => {window.open('https://drive.google.com/file/d/1OyeENarM-u5bZhpBFR9jjxgLW9deNBCj/view?usp=sharing', '_blank')};
+const downloadResume = () => {window.open('https://drive.google.com/file/d/1OOWWywTfDkgpRMo5m5WdcaZwXZ6LIEen/view?usp=sharing', '_blank');};
 
 const About = () => {
   return (

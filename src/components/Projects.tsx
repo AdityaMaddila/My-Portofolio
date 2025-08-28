@@ -32,15 +32,26 @@ const Projects = () => {
       demo: null,
       category: "Website"
     },
+
     {
       title: "Remote Work Productivity Analyzer",
       description: "A Python-based desktop application with Tkinter GUI that leverages Machine Learning and Deep Learning models to analyze and predict employee productivity in remote work settings. Features multiple ML models, real-time predictions, and comprehensive performance visualization.",
       tech: ["Python", "Tkinter", "Keras", "Scikit-learn", "Pandas", "Machine Learning"],
       image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop",
-      github: "https://github.com",
+      github: "https://github.com/AdityaMaddila/BlinkIt_dashboard",
       demo: null,
       category: "Machine Learning"
     },
+    {
+  title: "AI-based Muscle Activation from EMG Data",
+  description: "A data science project analyzing sEMG signals to detect muscle activation patterns. Includes preprocessing of normal vs. abnormal EMG recordings, feature engineering, and training/evaluation of a CatBoost-based classifier in a Jupyter Notebook workflow.",
+  tech: ["Python", "Jupyter Notebook", "Pandas", "NumPy", "Scikit-learn", "CatBoost", "Matplotlib"],
+  image: "https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=600&h=400&fit=crop",
+  github: "https://github.com/AdityaMaddila/AI-based-Muscle-Activation-from-EMG-Data",
+  demo: null,
+  category: "Machine Learning"
+},
+
       {
       title: "BlinkIt Data Dashboard",
       description: "Comprehensive Power BI dashboard analyzing BlinkIt's sales performance, customer insights, and business metrics with interactive visualizations.",
